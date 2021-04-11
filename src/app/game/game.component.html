@@ -1,0 +1,14 @@
+<div *ngIf="service.activeGame.state === 'waiting'">
+
+  <h4>Warten auf Mitspieler</h4>
+
+  <p>Link zum teilen: {{generateJoinLink()}}</p>
+
+  <button
+    *ngIf="service.activeGame.master === service.playerName"
+    (click)="service.startGameSession()"
+  >
+    Spiel starten
+  </button>
+
+</div>
