@@ -8,41 +8,43 @@
     align-items: center;
   }
 
-  .rules-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    padding: 2px;
-    background: rgba(ghostwhite, 0.5);
-    border-radius: 50%;
-  }
+  .rules {
+    .rules-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 2px;
+      background: rgba(ghostwhite, 0.5);
+      border-radius: 50%;
+    }
 
-  .rule-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    position: fixed;
-    left: 0;
-    top: 35px;
-    right: 0;
-    bottom: 0;
-
-    .box {
+    .rule-box {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 25px;
-      background: rgba(248, 248, 255, 0.7);
-      backdrop-filter: blur(9px);
-      border-radius: 4px;
-      text-align: justify;
+      padding: 15px;
+      position: fixed;
+      left: 0;
+      top: 35px;
+      right: 0;
+      bottom: 0;
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        background: rgba(248, 248, 255, 0.7);
+        backdrop-filter: blur(9px);
+        border-radius: 4px;
+        text-align: justify;
+      }
     }
   }
 

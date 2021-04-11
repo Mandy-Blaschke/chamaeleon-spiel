@@ -1,12 +1,16 @@
 <div class="container">
-  <div class="rules-button" (click)="toggleRules()">❔</div>
-  <div class="rule-box" *ngIf="showRules">
-    <div class="box">
-      Bei diesem Spiel geht es darum, dass alle Spieler, sich schnell eine Assoziation zu einem Wort
-      überlegen und diese dann nennen müssen. <br>
-      Von allen Spielern kennt einer-<i>das Chamäleon</i>-das entsprechende Wort nicht und muss versuchen unerkannt zu bleiben. <br>
-      Ziel der Spieler ist es, das Chamäleon zu finden. <br>
-      Ziel des Chamäleons ist es natürlich, nicht entdeckt zu werden.
+
+  <div class="rules" (click)="toggleRules()">
+    <div class="rules-button">❔</div>
+    <div class="rule-box" *ngIf="showRules">
+      <div class="box">
+        Bei diesem Spiel geht es darum, dass alle Spieler, sich schnell eine Assoziation zu einem Wort
+        überlegen und diese dann nennen müssen. <br>
+        Von allen Spielern kennt einer-<i>das Chamäleon</i>-das entsprechende Wort nicht und muss versuchen unerkannt zu
+        bleiben. <br>
+        Ziel der Spieler ist es, das Chamäleon zu finden. <br>
+        Ziel des Chamäleons ist es natürlich, nicht entdeckt zu werden.
+      </div>
     </div>
   </div>
 

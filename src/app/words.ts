@@ -23,7 +23,7 @@ export const WORDS: string[] = [
   'Kammer', 'Zimmer', 'taschenbuch', 'drucker', 'sanduhr', 'leben', 'verlobung', 'Verrat', 'Wurst', 'boden',
   'Ekel', 'Schreibtisch', 'Nagellack', 'Bonbon', 'dach', 'weihnachtsmann', 'osterhase', 'EIER', 'malen', 'zeichnen',
   'singen', 'spielen', 'Gitarre', 'Bass', 'Orchester', 'Geige', 'Seide', 'Wolle', 'Rolle', 'Schiff', 'See',
-  'Blutgruppe', 'Stuhl', 'sitzen', 'stehen', 'Luft', 'Sauerstoff', 'atmung', 'trinken', 'aNGST', 'leopard', 'gepard',
+  'Blutgruppe', 'Stuhl', 'sitzen', 'stehen', 'Luft', 'Sauerstoff', 'atmung', 'trinken', 'angst', 'leopard', 'gepard',
   'elefant', 'Elemente', 'leuchten', 'farben', 'knopf', 'Blume', 'Zug', 'eisenbahn', 'flugzeug', 'fliegen', 'fliege',
   'taste', 'schraube', 'hammer', 'bohrmaschine', 'drehen', 'kreisel', 'bahn', 'hahn', 'fisch', 'futter', 'bier', 'foto',
   'bild', 'Kugelschreiber', 'hubschrauber', 'glas', 'Karaffe', 'karamell', 'rottweiler', 'rotkehlchen', 'blaumeise', 'kohlmeise',
@@ -75,8 +75,9 @@ export const WORDS: string[] = [
   'pflicht', 'lügen', 'kirsche', 'birne', 'glühbirne', 'brombeere', 'saturn', 'neptun', 'zeus', 'aphrodite', 'mars', 'venus',
   'gespür', 'getränk', 'verrückt', 'merkur', 'jupiter', 'uranus', 'pluto', 'mond', 'lichtschalter', 'bierdeckel', 'schifffahrt',
   'spionage', 'käfer', 'kummer', 'lichtschranke', 'kennzeichen', 'fensterbrett', 'suche', 'Tablette', 'Motorrad', 'garage',
-  'universum', 'fotoapperat', 'boss', 'chef', 'faden', 'nadel', 'bücherrei', 'entschlossenheit', 'wunsch', 'kampf', 'augen',
+  'universum', 'fotoapparat', 'boss', 'chef', 'faden', 'nadel', 'bücherei', 'entschlossenheit', 'wunsch', 'kampf', 'augen',
   'idee', 'augenbraue', 'geschäft', 'botschaft', 'blind', 'huhn', 'blondine', 'provokation', 'fühler', 'schmetterling', 'papst',
   'puma', 'ostern', 'frau', 'mann', 'scharf', 'chilischote', 'übelkeit', 'alkohol', 'betrunken', 'mensch', 'handtuch', 'sandstrand',
-  'zombie', 'hoffnung', 'chat', 'hupe', 'scheinwerfer', 'schild',
+  'zombie', 'hoffnung', 'chat', 'hupe', 'scheinwerfer', 'schild', 'Duschgel', 'Brause', 'Karton', 'Gäste', 'Matratze',
+  'Kabelbinder', 'Stehlampe', 'hausschuhe', 'Laterne'
 ];

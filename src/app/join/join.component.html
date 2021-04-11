@@ -1,12 +1,14 @@
 <main>
 
-  <input
-    type="text"
-    maxlength="15"
-    placeholder="Spielername"
-    [(ngModel)]="playerName"
-  >
+  <form>
+    <input
+      type="text"
+      maxlength="15"
+      placeholder="Spielername"
+      [(ngModel)]="playerName"
+    >
 
-  <app-button (click)="joinRequest()">Spiel beitreten</app-button>
+    <app-button (click)="joinRequest()">Spiel beitreten</app-button>
+  </form>
 
 </main>

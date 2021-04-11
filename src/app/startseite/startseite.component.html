@@ -1,10 +1,16 @@
 <main>
-  <input
-    type="text"
-    maxlength="15"
-    placeholder="Spielername"
-    [(ngModel)]="username"
-  >
 
-  <app-button (click)="newGameRequest()">Spiel erstellen</app-button>
+  <form>
+
+    <input
+      type="text"
+      maxlength="15"
+      placeholder="Spielername"
+      [(ngModel)]="username"
+    >
+
+    <app-button (click)="newGameRequest()">Spiel erstellen</app-button>
+
+  </form>
+
 </main>
