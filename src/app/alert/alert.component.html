@@ -1,5 +1,7 @@
 <div *ngIf="alert.internalMessage != null" class="alert">
-  <h2>{{alert.internalMessage}}</h2>
+  <div class="box">
+    <h2>{{alert.internalMessage}}</h2>
 
-  <app-button (click)="alert.internalMessage = null">OK</app-button>
+    <app-button (click)="alert.internalMessage = null">OK</app-button>
+  </div>
 </div>

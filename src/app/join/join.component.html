@@ -1,11 +1,11 @@
 <main>
 
-  <p>join works!</p>
+  <input
+    type="text"
+    placeholder="Spielername"
+    [(ngModel)]="playerName"
+  >
 
-  <label>Spielername:
-    <input type="text" [(ngModel)]="playerName">
-  </label>
-
-  <button (click)="joinRequest()">Spiel beitreten</button>
+  <app-button (click)="joinRequest()">Spiel beitreten</app-button>
 
 </main>

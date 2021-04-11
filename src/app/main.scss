@@ -3,3 +3,14 @@
   display: flex;
   justify-content: center;
 }
+
+@mixin input {
+  user-select: none;
+  outline: none;
+  border: none;
+  margin-bottom: 25px;
+  padding: 2px 5px;
+  text-align: center;
+  box-shadow: inset 0 0 3px #7f0852;
+  border-radius: 4px;
+}

@@ -58,9 +58,8 @@ export class MainService {
   async newRound(): Promise<void> {
     this.activeGame = await this.loadFromServer(this.activeGame.gameId);
     this.activeGame.state = 'guessing';
-    this.activeGame.word = WORDS[Math.round(Math.random() * WORDS.length)];
-    // TODO: random Spieler
-    this.activeGame.chameleon = this.activeGame.players[Math.round(Math.random() * this.activeGame.players.length)];
+    this.activeGame.word = WORDS[Math.floor(Math.random() * WORDS.length)];
+    this.activeGame.chameleon = this.activeGame.players[Math.floor(Math.random() * this.activeGame.players.length)];
     await this.writeToServer(this.activeGame);
   }
 

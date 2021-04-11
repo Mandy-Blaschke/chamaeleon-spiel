@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-evenly;
 
+  @media (max-width: 760px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
   h1 {
     font-size: 2.5rem;
     font-family: 'Rock Salt', cursive;
