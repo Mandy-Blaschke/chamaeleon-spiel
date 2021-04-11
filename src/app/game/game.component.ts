@@ -13,10 +13,21 @@ export class GameComponent implements OnInit, OnDestroy {
   constructor(public service: MainService, private router: Router) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const sessionGameId = sessionStorage.getItem('gameId');
+    const sessionPlayerName = sessionStorage.getItem('playerName');
+
+    if (sessionGameId != null && sessionPlayerName != null) {
+      // Rekonstruktion der Spielsession
+      this.service.activeGame = await this.service.loadFromServer(sessionGameId);
+      this.service.playerName = sessionPlayerName;
+    }
+
     if (this.service.activeGame == null) {
       this.router.navigate(['/startseite']).then();
     } else {
+      sessionStorage.setItem('gameId', this.service.activeGame.gameId);
+      sessionStorage.setItem('playerName', this.service.playerName);
       this.intervalHandle = setInterval(() => {
         this.service.updateActiveGame().then();
       }, 2500);

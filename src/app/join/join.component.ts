@@ -21,7 +21,11 @@ export class JoinComponent implements OnInit {
       alert('Spielername setzen');
     } else {
       const gameId = this.activatedRoute.snapshot.paramMap.get('gameId');
-      this.service.joinActiveGame(gameId, this.playerName);
+      // TODO react on failure
+      const joinSuccessful = this.service.joinActiveGame(gameId, this.playerName);
+      if (!joinSuccessful) {
+        alert('Spielername bereits vergeben!');
+      }
     }
   }
 }

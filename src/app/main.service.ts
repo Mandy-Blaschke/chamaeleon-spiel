@@ -40,7 +40,6 @@ export class MainService {
   }
 
   async joinActiveGame(gameId: string, playerName: string): Promise<boolean> {
-    // TODO: Gameroute in LocalStorage speichern
     const game = await this.loadFromServer(gameId);
 
     if (game.player.includes(playerName)) {
@@ -48,7 +47,6 @@ export class MainService {
     } else {
       game.player.push(playerName);
       await this.writeToServer(game);
-      // TODO evt. Standüberschreibung checken
       this.activeGame = game;
       this.playerName = playerName;
       await this.router.navigate(['/game']);
