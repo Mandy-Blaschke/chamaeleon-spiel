@@ -1,14 +1,32 @@
-<div *ngIf="service.activeGame.state === 'waiting'">
+<ng-container *ngIf="service.activeGame != null">
 
-  <h4>Warten auf Mitspieler</h4>
+  <div *ngIf="service.activeGame.state === 'waiting'">
 
-  <p>Link zum teilen: {{generateJoinLink()}}</p>
+    <h4>Warten auf Mitspieler</h4>
 
-  <button
-    *ngIf="service.activeGame.master === service.playerName"
-    (click)="service.startGameSession()"
-  >
-    Spiel starten
-  </button>
+    <p>Link zum teilen: {{generateJoinLink()}}</p>
 
-</div>
+    <button
+      *ngIf="service.activeGame.master === service.playerName"
+      (click)="service.newRound()"
+    >
+      Spiel starten
+    </button>
+
+  </div>
+
+  <div *ngIf="service.activeGame.state === 'guessing'">
+
+    <h3 *ngIf="service.activeGame.chameleon !== service.playerName">{{service.activeGame.word}}</h3>
+    <h3 *ngIf="service.activeGame.chameleon === service.playerName">Du bist das Chamäleon!</h3>
+
+    <button
+      *ngIf="service.activeGame.master === service.playerName"
+      (click)="service.newRound()"
+    >
+      Neue Runde
+    </button>
+
+  </div>
+
+</ng-container>

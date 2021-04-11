@@ -22,6 +22,7 @@ export class MainService {
       player: [gameMaster],
       state: 'waiting',
       word: '',
+      chameleon: null,
     };
     await this.writeToServer(gameplay);
     this.activeGame = gameplay;
@@ -55,10 +56,18 @@ export class MainService {
     }
   }
 
-  async startGameSession(): Promise<void> {
+  async newRound(): Promise<void> {
     this.activeGame = await this.loadFromServer(this.activeGame.gameId);
-    this.activeGame.state = 'create word';
+    this.activeGame.state = 'guessing';
+    // TODO: random Wort
+    this.activeGame.word = 'haus';
+    // TODO: random Spieler
+    this.activeGame.chameleon = this.activeGame.player[0];
     await this.writeToServer(this.activeGame);
+  }
+
+  async updateActiveGame(): Promise<void> {
+    this.activeGame = await this.loadFromServer(this.activeGame.gameId);
   }
 }
 
@@ -66,8 +75,9 @@ export interface Gameplay {
   gameId: string;
   master: string;
   player: string[];
-  state: 'waiting' | 'create word';
+  state: 'waiting' | 'guessing';
   word: string;
+  chameleon: string;
 }
 
 function createGameId(): string {
