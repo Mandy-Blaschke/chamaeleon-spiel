@@ -2,4 +2,54 @@
 
 main {
   @include main.main;
+
+  .waiting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .hourglass {
+      font-size: 35px;
+      width: fit-content;
+      animation: rotation 2s linear infinite;
+    }
+
+    .link {
+      color: #44052a;
+      text-shadow: 0 0 5px ghostwhite;
+      text-align: center;
+    }
+  }
+
+  .playing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .word {
+      font-size: 4rem;
+      text-shadow: 0 1px 3px black;
+    }
+
+    .chameleon {
+      filter: hue-rotate(80deg);
+
+      img {
+        @media (max-width: 645px) {
+          width: 240px;
+        }
+      }
+    }
+
+    h3 {
+      text-align: center;
+      color: #7f0852;
+    }
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(180deg);
+  }
 }

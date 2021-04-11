@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MainService} from '../main.service';
+import {AlertService} from '../alert.service';
 
 @Component({
   selector: 'app-startseite',
@@ -9,7 +10,7 @@ import {MainService} from '../main.service';
 export class StartseiteComponent implements OnInit {
   username = '';
 
-  constructor(public service: MainService) {
+  constructor(public service: MainService, public alert: AlertService) {
   }
 
   ngOnInit(): void {
@@ -18,10 +19,11 @@ export class StartseiteComponent implements OnInit {
   async newGameRequest(): Promise<void> {
     // Abbruch der Spielerstellung, wenn kein Nutzername
     if (this.username.trim() === '') {
-      alert('Username muss gesetzt werden');
+      this.alert.showAlert('Spielernamen angeben!');
       // Spiel kann erstellt werden
     } else {
       await this.service.createNewGame(this.username);
+      this.alert.internalMessage = null;
     }
   }
 }

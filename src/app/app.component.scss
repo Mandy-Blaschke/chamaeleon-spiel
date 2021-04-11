@@ -2,6 +2,12 @@ main {
   display: flex;
   flex-direction: column;
 
+  app-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
   .box {
     display: flex;
     justify-content: space-between;

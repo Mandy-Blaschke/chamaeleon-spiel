@@ -1,4 +1,9 @@
 <main>
-  <input type="text" placeholder="Spielername" [(ngModel)]="username">
+  <input
+    type="text"
+    placeholder="Spielername"
+    [(ngModel)]="username"
+  >
+
   <app-button (click)="newGameRequest()">Spiel erstellen</app-button>
 </main>
