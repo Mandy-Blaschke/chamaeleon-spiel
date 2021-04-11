@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+
+  h1 {
+    font-size: 2.5rem;
+    font-family: 'Rock Salt', cursive;
+    background: linear-gradient(60deg, blue, yellow, red, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 2px black;
+
+    @media (max-width: 625px){
+      margin: 0;
+    }
+
+    @media (max-width: 530px){
+      font-size: 2rem;
+    }
+
+    @media (max-width: 430px){
+      font-size: 1.5rem;
+    }
+  }
+
+  img {
+    width: 200px;
+    height: auto;
+
+    @media (max-width: 625px){
+      width: 150px;
+    }
+
+    @media (max-width: 530px){
+      width: 100px;
+    }
+  }
+
+}

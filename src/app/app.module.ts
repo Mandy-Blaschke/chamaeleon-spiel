@@ -8,13 +8,19 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { JoinComponent } from './join/join.component';
 import { GameComponent } from './game/game.component';
+import { HeaderComponent } from './header/header.component';
+import { ButtonComponent } from './button/button.component';
+import { PlayersComponent } from './players/players.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartseiteComponent,
     JoinComponent,
-    GameComponent
+    GameComponent,
+    HeaderComponent,
+    ButtonComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,

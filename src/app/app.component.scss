@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  flex-direction: column;
+
+  .box {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 645px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    app-players {
+      margin-top: 35px;
+      width: 150px;
+      padding: 15px;
+      background: rgba(orange, 40%);
+      border-radius: 4px;
+    }
+
+    router-outlet {
+      display: flex;
+      justify-content: center;
+      width: 15px;
+    }
+  }
+}

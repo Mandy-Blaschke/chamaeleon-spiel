@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<main>
+
+  <app-header></app-header>
+
+  <div class="box">
+
+    <router-outlet></router-outlet>
+
+    <app-players *ngIf="service.activeGame != null"></app-players>
+
+    <div *ngIf="service.activeGame == null"></div>
+
+  </div>
+
+
+</main>

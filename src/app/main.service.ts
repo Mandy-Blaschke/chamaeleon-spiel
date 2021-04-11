@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {WORDS} from './words';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class MainService {
     const gameplay: Gameplay = {
       gameId: createGameId(),
       master: gameMaster,
-      player: [gameMaster],
+      players: [gameMaster],
       state: 'waiting',
       word: '',
       chameleon: null,
@@ -42,10 +43,10 @@ export class MainService {
   async joinActiveGame(gameId: string, playerName: string): Promise<boolean> {
     const game = await this.loadFromServer(gameId);
 
-    if (game.player.includes(playerName)) {
+    if (game.players.includes(playerName)) {
       return false;
     } else {
-      game.player.push(playerName);
+      game.players.push(playerName);
       await this.writeToServer(game);
       this.activeGame = game;
       this.playerName = playerName;
@@ -57,10 +58,9 @@ export class MainService {
   async newRound(): Promise<void> {
     this.activeGame = await this.loadFromServer(this.activeGame.gameId);
     this.activeGame.state = 'guessing';
-    // TODO: random Wort
-    this.activeGame.word = 'haus';
+    this.activeGame.word = WORDS[Math.round(Math.random() * WORDS.length)];
     // TODO: random Spieler
-    this.activeGame.chameleon = this.activeGame.player[0];
+    this.activeGame.chameleon = this.activeGame.players[Math.round(Math.random() * this.activeGame.players.length)];
     await this.writeToServer(this.activeGame);
   }
 
@@ -72,7 +72,7 @@ export class MainService {
 export interface Gameplay {
   gameId: string;
   master: string;
-  player: string[];
+  players: string[];
   state: 'waiting' | 'guessing';
   word: string;
   chameleon: string;
